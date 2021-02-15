@@ -1,0 +1,7 @@
+@mixin main_container {
+  padding: 56px 32px 100px 32px;
+
+  @media (max-width: $break-xs) {
+    padding: 56px 10px 100px 10px;
+  }
+}

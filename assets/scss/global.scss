@@ -1,0 +1,61 @@
+html{
+  overflow: auto !important;
+}
+body{
+  font-family: sans-serif;
+  //background: #F5F5F5;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a,p{
+  font-family:  sans-serif;
+  text-decoration: none;
+}
+h1,h2,h3,h4,h5,h6,div,span{
+  font-family:  sans-serif !important;
+}
+h1{
+  font-size: 90px !important;
+}
+ul{
+  list-style-type: none;
+  padding-left: 0;
+}
+.custom-style-toast.top-right {
+  min-width: 300px !important;
+  right: 4% !important;
+}
+.toasted-container {
+  .toasted{
+    justify-content: left !important;
+    flex-direction: column !important;
+    //align-items: flex-start !important;
+    padding-top: 13px !important;
+    padding-bottom: 10px !important;
+  }
+  .success{
+    flex-direction: initial !important;
+  }
+  .validation-style{
+    flex-direction: initial !important;
+  }
+  .mess-container{
+    margin-bottom: 4px;
+    margin-top: 0;
+    display: block;
+    width: 100%;
+  }
+  .val-dot{
+    margin-right: 5px;
+    display: inline-block;
+  }
+}
+
+
+
+
+
+
+
+
