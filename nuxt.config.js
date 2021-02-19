@@ -65,6 +65,7 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
+    "@nuxtjs/tailwindcss",
     "@nuxtjs/axios",
     "@nuxtjs/svg",
     "@nuxtjs/auth",
@@ -72,6 +73,10 @@ export default {
     "@nuxtjs/toast",
     "nuxt-i18n",
   ],
+
+  storybook: {
+    stories: ["~/stories/**/*.stories.js"],
+  },
 
   toast: {
     position: "top-right",

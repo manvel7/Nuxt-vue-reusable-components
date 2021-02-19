@@ -1,0 +1,16 @@
+[
+  {
+    "name": "testing",
+    "path": "/testing",
+    "component": "C:\\\\Users\\\\user\\\\Desktop\\\\stagiro-nuxt\\\\pages\\\\testing.vue",
+    "chunkName": "pages/testing",
+    "_name": "_5cc6b76b"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "C:\\\\Users\\\\user\\\\Desktop\\\\stagiro-nuxt\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_e3c95c26"
+  }
+]
