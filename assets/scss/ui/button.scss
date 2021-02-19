@@ -1,0 +1,148 @@
+.custom-button {
+  transition: all 0.3s ease-in-out;
+
+  .svg{
+    display: inherit;
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+
+  &:focus{
+    outline: none;
+  }
+
+  &__normal{
+    background: $c-normal;
+
+    &:hover{
+      background: linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), $c-normal;
+    }
+    &:focus{
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), $c-normal;
+    }
+  }
+  &__primary{
+    background: $c-primary;
+
+    &:hover{
+      background: linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), $c-primary;
+    }
+    &:focus{
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), $c-primary;
+    }
+  }
+  &__secondary{
+    background: $c-secondary;
+
+    &:hover{
+      background: linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), $c-secondary;
+    }
+    &:focus{
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), $c-secondary;
+    }
+  }
+  &__ghost{
+    border: 1px solid #DDD;
+    background: transparent;
+
+    &:hover{
+      background: #F9F9F9;
+    }
+    &:focus{
+      background: rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &__small{
+    padding: 10px 24px;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+  }
+
+  &__medium{
+    padding: 12px 24px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+  }
+
+  &__large{
+    padding: 15px 24px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: -0.02em;
+  }
+
+  &__black{
+    color: $c-black;
+  }
+  &__white{
+    color: $c-white;
+  }
+
+  &__disabled{
+    cursor: not-allowed;
+    background: $c-gray-500;
+    color: $c-gray-800;
+  }
+
+
+
+
+  //&--primary {
+  //  color: white;
+  //  background-color: #1ea7fd;
+  //}
+  //&--secondary {
+  //  color: #333;
+  //  background-color: transparent;
+  //  box-shadow: rgba(0, 0, 0, 0.15) 0 0 0 1px inset;
+  //}
+  //&--small {
+  //  font-size: 12px;
+  //  padding: 10px 16px;
+  //}
+  //&--medium {
+  //  font-size: 14px;
+  //  padding: 11px 20px;
+  //}
+  //&--large {
+  //  font-size: 16px;
+  //  padding: 12px 24px;
+  //}
+  //&--loading{
+  //  cursor: not-allowed;
+  //  &::after {
+  //    content: ' . ';
+  //    animation: dots 1s steps(5, end) infinite;
+  //  }
+  //  @keyframes dots {
+  //    0%, 20% {
+  //      color: rgba(0,0,0,0);
+  //      text-shadow:
+  //        .25em 0 0 rgba(0,0,0,0),
+  //        .5em 0 0 rgba(0,0,0,0);}
+  //    40% {
+  //      color: white;
+  //      text-shadow:
+  //        .25em 0 0 rgba(0,0,0,0),
+  //        .5em 0 0 rgba(0,0,0,0);}
+  //    60% {
+  //      text-shadow:
+  //        .25em 0 0 white,
+  //        .5em 0 0 rgba(0,0,0,0);}
+  //    80%, 100% {
+  //      text-shadow:
+  //        .25em 0 0 white,
+  //        .5em 0 0 white;}
+  //  }
+  //}
+}
+
+
+
+

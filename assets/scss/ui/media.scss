@@ -1,0 +1,33 @@
+.custom-media{
+  display: inline-block;
+
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  &__default{
+    width: 320px;
+    height: 180px;
+  }
+  &__default-small{
+    width: 240px;
+    height: 135px;
+  }
+  &__square{
+    width: 320px;
+    height: 320px;
+  }
+  &__square-small{
+    width: 240px;
+    height: 240px;
+  }
+  &__portrait{
+    width: 320px;
+    height: 480px;
+  }
+  &__portrait-small{
+    width: 240px;
+    height: 360px;
+  }
+}

@@ -1,0 +1,23 @@
+.custom-icon{
+  display: inline-block;
+
+  img{
+    width: 100%;
+    height: 100%;
+  }
+
+  &__small{
+    width: 18px;
+    height: 18px;
+  }
+
+  &__medium{
+   width: 24px;
+    height: 24px;
+  }
+
+  &__large{
+    width: 32px;
+    height: 32px;
+  }
+}

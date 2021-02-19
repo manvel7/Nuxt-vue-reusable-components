@@ -5,3 +5,77 @@
     padding: 56px 10px 100px 10px;
   }
 }
+
+@mixin label{
+  font-family: 'Inter', sans-serif;
+  vertical-align: text-bottom;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 24px;
+  color: $c-black;
+}
+
+@mixin ul{
+  padding-left: 0;
+  list-style-type: none;
+}
+
+@mixin switch{
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 36px;
+      height: 22px;
+      vertical-align: sub;
+    }
+
+    .slider::before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 0.5px;
+      bottom: 1px;
+      background-color: white;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    }
+    .slider.round {
+      border-radius: 34px;
+      border: 1px solid #F2F4F6;
+    }
+
+    .slider.round::before {
+      border-radius: 50%;
+    }
+
+    input {
+      display: none;
+    }
+    input:checked + .slider {
+      background-color: $c-primary;
+    }
+
+    input:focus + .slider {
+      box-shadow: 0 0 1px #101010;
+    }
+
+    input:checked + .slider::before {
+      -webkit-transform: translateX(14px);
+      -ms-transform: translateX(14px);
+      transform: translateX(14px);
+      background-color: $c-white;
+    }
+
+}

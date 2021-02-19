@@ -1,0 +1,48 @@
+.custom-switch{
+  &__item{
+    .text{
+      font-family: "Inter", sans-serif;
+      vertical-align: text-bottom !important;
+      margin-left: 8px;
+      font-size: 15px;
+      line-height: 24px;
+      color: $c-black;
+    }
+    @include switch;
+  }
+
+  &__large{
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 48px;
+      height: 28px;
+      vertical-align: sub;
+    }
+    .slider::before {
+      position: absolute;
+      content: "";
+      height: 24px;
+      width: 24px;
+      left: 1.5px;
+      bottom: 1px;
+      background-color: white;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    }
+    input:checked + .slider::before {
+      -webkit-transform: translateX(18px);
+      -ms-transform: translateX(18px);
+      transform: translateX(18px);
+      background-color: $c-white;
+    }
+  }
+
+  &__medium{
+    @include switch;
+  }
+}
+
+
+
+

@@ -1,0 +1,41 @@
+.custom-checkbox{
+
+  input{
+    width: 18px;
+    height: 18px;
+    border: 2px solid $c-gray-700;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+
+    &:checked {
+      background: transparent;
+      border: 2px solid #000;
+
+      &::after {
+        content: '✔';
+        color: black;
+        position: absolute;
+        top: -4px;
+        left: 1px;
+      }
+    }
+  }
+
+  label{
+    margin-left: 11px;
+    vertical-align: text-bottom;
+    @include label;
+  }
+
+
+
+  &__disabled{
+    background: $c-gray-500;
+    border: 2px solid $c-gray-500 !important;
+  }
+}

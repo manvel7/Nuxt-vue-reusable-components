@@ -1,0 +1,40 @@
+.custom-lists{
+
+  ul{
+    padding: 65px 80px;
+    list-style-type: none;
+
+  }
+
+  &__item{
+    display: flex;
+    justify-content: space-between;
+    background: $c-white;
+    border: 1px solid red;
+    padding: 13px 16px;
+
+    .left-side{
+      display: flex;
+
+      .header{
+        p{
+          margin-bottom: 0;
+          margin-top: 0;
+        }
+        .title{
+          font-family: $font-inter;
+          font-weight: bold;
+          font-size: 15px;
+          line-height: 24px;
+          color: $c-black;
+        }
+        .sub-title{
+          font-family: $font-inter;
+          font-size: 14px;
+          line-height: 22px;
+          color: $c-gray-800;
+        }
+      }
+    }
+  }
+}
