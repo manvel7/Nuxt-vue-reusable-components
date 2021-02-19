@@ -7,6 +7,7 @@ export const functions = {
         `<div class="mess-container"><span class='val-dot'>&#8226;</span> <span class='val-dot'>${item.msg}</span></div>`
       );
     });
+
     return row.join("");
   },
 

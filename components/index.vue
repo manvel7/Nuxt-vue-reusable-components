@@ -1,6 +1,9 @@
 <template>
   <div class="test">
-    <h1>Hello {{ $t("email") }} <svg-close /></h1>
+    <h1>
+      Hello {{ $t("email") }}
+      <svg-close />
+    </h1>
     <div>
       <div class="form-group" :class="{ 'form-group--error': $v.name.$error }">
         <label class="form__label">Email</label>
@@ -25,6 +28,7 @@
 import { required, minLength, between } from "vuelidate/lib/validators";
 import { functions } from "@/utils";
 import SvgClose from "~/assets/img/cloud-arrow.svg?inline";
+
 export default {
   name: "Index",
   components: {
