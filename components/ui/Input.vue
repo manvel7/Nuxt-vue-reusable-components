@@ -1,10 +1,10 @@
 <template>
-  <div
-    class="custom-input"
-    :class="{ 'has-error': hasError, disabled: disabled }"
-  >
-    <form class="w-full">
-      <div class="floating-input relative">
+  <div class="custom-input">
+    <div class="w-full">
+      <div
+        class="floating-input relative"
+        :class="{ 'has-error': hasError, disabled: disabled }"
+      >
         <input
           id="email"
           v-model.trim="propModel"
@@ -14,19 +14,20 @@
           autocomplete="off"
           :disabled="disabled"
           :class="{ disabled: disabled, 'icon-padding': icon }"
+          @click="handleClick"
         />
         <label
           for="email"
           class="absolute top-0 left-0 px-3 py-5 h-full pointer-events-none transform origin-left transition-all duration-100 ease-in-out"
           >{{ label }}</label
         >
-        <span v-if="icon" class="svg">
+        <span v-if="icon" class="svg" @click="iconHandler">
           <img :src="icon" alt="icon" />
         </span>
       </div>
       <div v-if="helpText" class="help-text">{{ helpText }}</div>
       <InputErrorList :rules="rules" :error="error" :has-error="hasError" />
-    </form>
+    </div>
   </div>
 </template>
 
@@ -80,6 +81,7 @@ export default {
   data() {
     return {
       isError: false,
+      click: false,
     };
   },
   computed: {
@@ -92,7 +94,20 @@ export default {
       },
     },
     hasError() {
+      if (this.click && !this.error.$model.length > 0 && this.error.$invalid) {
+        // eslint-disable-next-line vue/no-side-effects-in-computed-properties
+        this.click = false;
+        return true;
+      }
       return this.error.$model.length > 0 && this.error.$invalid;
+    },
+  },
+  methods: {
+    handleClick() {
+      this.click = true;
+    },
+    iconHandler() {
+      this.$emit("icon-click");
     },
   },
 };
