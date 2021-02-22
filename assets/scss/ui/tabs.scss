@@ -1,0 +1,31 @@
+.custom-tabs{
+  width: 500px;
+
+  ul{
+    width: 100%;
+    display: flex;
+
+    li{
+      margin-right: 16px;
+      padding: 11px 16px;
+      color: $c-gray-800 !important;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+      @include btn-l-mont;
+
+      &:last-child{
+        margin-right: 0;
+      }
+
+      &:hover{
+        background: $c-gray-300;
+      }
+    }
+    .is-active{
+      background: $c-gray-300;
+      border-bottom: 2px solid $c-black;
+      color: $c-black;
+    }
+  }
+
+}

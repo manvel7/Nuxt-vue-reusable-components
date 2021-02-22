@@ -6,19 +6,171 @@
   }
 }
 
-@mixin label{
-  font-family: 'Inter', sans-serif;
-  vertical-align: text-bottom;
-  cursor: pointer;
-  font-size: 15px;
-  line-height: 24px;
-  color: $c-black;
-}
-
 @mixin ul{
   padding-left: 0;
   list-style-type: none;
 }
+
+@mixin typography-heading{
+  font-family: $font-montserrat;
+  font-weight: bold;
+  letter-spacing: -0.02em;
+  color: $c-black;
+}
+
+@mixin button-text{
+  font-family: $font-montserrat;
+  font-weight: bold;
+  letter-spacing: -0.02em;
+  color: $c-black;
+}
+
+@mixin link-mont{
+  font-family: $font-montserrat;
+  font-weight: 400;
+  text-decoration-line: underline;
+  color: $c-black;
+}
+
+@mixin link-int{
+  font-family: $font-inter;
+  font-weight: 400;
+  text-decoration-line: underline;
+  color: $c-black;
+}
+
+@mixin text{
+  font-family: $font-inter;
+  color: $c-black;
+}
+
+//Buttons Montserrat
+@mixin btn-s-mont{
+  font-size: 13px;
+  line-height: 20px;
+  @include button-text;
+}
+@mixin btn-m-mont{
+  font-size: 14px;
+  line-height: 24px;
+  @include button-text;
+}
+@mixin btn-l-mont{
+  font-size: 16px;
+  line-height: 26px;
+  @include button-text;
+}
+
+//Links Montserrat
+@mixin link-s-mont{
+  font-size: 14px;
+  line-height: 22px;
+  @include link-mont;
+}
+@mixin link-m-mont{
+  font-size: 15px;
+  line-height: 24px;
+  @include link-mont;
+}
+@mixin link-l-mont{
+  font-size: 18px;
+  line-height: 26px;
+  @include link-mont;
+}
+
+//Links Inter
+@mixin link-s-int{
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  @include link-int;
+}
+@mixin link-m-int{
+  font-size: 15px;
+  line-height: 24px;
+  @include link-int;
+}
+@mixin link-l-int{
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 26px;
+  @include link-int;
+}
+
+//Text Large Inter
+@mixin text-l{
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 26px;
+  @include text;
+}
+@mixin text-l-med{
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 27px;
+  @include text;
+}
+@mixin text-l-bold{
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 27px;
+  @include text;
+}
+
+//Text Medium Inter
+@mixin text-m{
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 24px;
+  @include text;
+}
+@mixin text-m-med{
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+  @include text;
+}
+@mixin text-m-bold{
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 24px;
+  @include text;
+}
+
+//Text Small Inter
+@mixin text-s{
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  @include text;
+}
+@mixin text-s-med{
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  @include text;
+}
+@mixin text-s-bold{
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 21px;
+  @include text;
+}
+
+//Text Extra Inter
+@mixin text-x{
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  @include text;
+}
+@mixin text-x-med{
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  @include text;
+}
+
 
 @mixin switch{
     .switch {

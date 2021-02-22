@@ -9,9 +9,10 @@ $c-gray-700: #D1D1D1;
 $c-gray-600: #DDD;
 $c-gray-500: #E8E8E8;
 $c-gray-400: #F3F3F3;
-$c-success: #21D184;
-$c-error: #FF5C5C;
-$c-error: #3A40DD;
+$c-gray-300: #F9F9F9;
+$c-success: #1CA569;
+$c-error: #E95012;
+$c-link: #3A40DD;
 
 
 //spacing
@@ -23,7 +24,6 @@ $spacing-xl: 40px;
 $spacing-2x-l: 48px;
 
 
-
 // page transition
 $t-duration: 700ms;
 $t-delay: 300ms;
@@ -32,12 +32,9 @@ $t-delay: 300ms;
 $shadow: 0 7px 15px rgba(0, 0, 0, 0.1);
 
 // font
-$font-montserrat: 'Montserrat', sans-serif;;
-$font-inter: 'Inter', sans-serif;;
+$font-montserrat: 'Montserrat', sans-serif;
+$font-inter: 'Inter', sans-serif;
 
-
-//font size
-$font-size-p: 16px;
 
 // breakpoints
 $break-xlg: 144*0.625em;

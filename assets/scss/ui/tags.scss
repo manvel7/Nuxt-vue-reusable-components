@@ -9,11 +9,7 @@
     padding: 6px 16px;
     border-radius: 16px;
     margin-right: 32px;
-    font-family: 'Inter', sans-serif;;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 13px;
-    line-height: 20px;
+    @include text-s-med;
 
     &:last-child{
       margin-right: 0;

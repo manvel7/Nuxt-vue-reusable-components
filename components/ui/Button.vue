@@ -23,10 +23,10 @@ export default {
       type: String,
       required: true,
     },
-    // eslint-disable-next-line vue/require-default-prop
     src: {
       type: String,
       required: false,
+      default: null,
     },
     background: {
       type: String,

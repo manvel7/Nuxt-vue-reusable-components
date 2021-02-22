@@ -37,7 +37,8 @@
     "nuxt-i18n": "^6.16.0",
     "uikit": "^3.6.16",
     "vue-advanced-chat": "^0.7.2",
-    "vuelidate": "^0.7.6"
+    "vuelidate": "^0.7.6",
+    "v-click-outside": "^3.1.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",

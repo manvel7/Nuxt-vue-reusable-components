@@ -1,9 +1,20 @@
 <template>
-  <div class="test" style="margin-left: 50px">
+  <div class="test">
+    <div class="grid gap-4 sm:grid-cols-6 md:grid-cols-3 lg:grid-cols-4">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+    </div>
     <Button
       :label="'Secondary'"
       :background="'secondary'"
-      :size="'medium'"
+      :size="'large'"
       :color="'black'"
       :disabled="false"
     />
@@ -17,7 +28,7 @@
     <Button
       :label="'Disable'"
       :background="'disable'"
-      :size="'medium'"
+      :size="'small'"
       :color="'black'"
       :disabled="true"
     />
@@ -74,16 +85,132 @@
         :size="'portrait-small'"
       />
     </div>
+    <br />
+    <br />
+    <br />
+    <div>
+      <Paginations :pages="{ total: 1, currentPage: 1 }" />
+      <Paginations :pages="pages" @paginate="paginate" />
+    </div>
+    <br />
+    <div>
+      <Tabs>
+        <Tab name="Posts (21)" :selected="true">
+          <h1>What we do</h1>
+        </Tab>
+        <Tab name="Photos (139)">
+          <h1>How much we do it for</h1>
+        </Tab>
+        <Tab name="Videos (54)">
+          <h1>Why we do it</h1>
+        </Tab>
+      </Tabs>
+    </div>
+    <div>
+      <Input
+        :type="'email'"
+        :label="'Enter Email'"
+        :disabled="false"
+        :help-text="'Help Text'"
+        :name.sync="userName"
+        :error="$v.userName"
+        :rules="[
+          { name: 'required' },
+          { name: 'minLength', value: 4 },
+          { name: 'email' },
+        ]"
+      />
+    </div>
+    <br />
+    <br />
+    <div>
+      <Dropdown
+        :list="[
+          { id: 1, label: 'Orange', value: 'orange' },
+          { id: 2, label: 'Apple', value: 'apple' },
+          { id: 3, label: 'Lemon', value: 'Lemon' },
+        ]"
+        :return-object="false"
+        :item-value="'id'"
+        :item-label="'label'"
+        :help-text="'Help Text'"
+        :name.sync="fruit"
+      />
+    </div>
+    <br />
+    <div>
+      <FilterDropdown
+        :list="[
+          { id: 1, label: 'Orange', value: 'orange' },
+          { id: 2, label: 'Apple', value: 'apple' },
+          { id: 3, label: 'Lemon', value: 'Lemon' },
+        ]"
+        :return-object="false"
+        :item-value="'id'"
+        :item-label="'label'"
+        :name.sync="fruit"
+      />
+    </div>
+    <br />
+    <br />
+    <div>
+      <FileUpload />
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <div>
+      <button @click="showSnackbar = !showSnackbar">show</button>
+      <SnackBar
+        :type="'snackbar'"
+        :active.sync="showSnackbar"
+        :position="position"
+        :timeout="10000"
+        :message="'Can’t send a message. Retry in 5 seconds.'"
+        :background-color="'default'"
+        :is-close="true"
+        @close="close"
+      />
+    </div>
+    <br />
+    <div>
+      <button id="show-modal" class="demo-button" @click="showModal = true">
+        Show Modal
+      </button>
+      <Alerts v-if="showModal" :show-close="true" @close="showModal = false" />
+    </div>
+    <br />
+    <br />
     <Lists
       :width="'480px'"
       :items="[
         {
-          title: 'Test',
-          subTitle: 'Test',
+          title: 'Two-line + Control',
+          subTitle: 'Some secondary text here',
           iconSrc: require(`~/assets/img/icon.svg`),
-          control: 'qe',
-          metaData: 'qe',
-          timeStamp: 'timeStamp',
+          data: {
+            type: 'timestamp',
+            value: 'timestamp',
+          },
+        },
+        {
+          title: 'Two-line + Control',
+          subTitle: 'Some secondary text here',
+          iconSrc: require(`~/assets/img/icon.svg`),
+          data: {
+            type: 'metadata',
+            value: '5',
+          },
+        },
+        {
+          title: 'Two-line + Control',
+          subTitle: 'Some secondary text here',
+          iconSrc: require(`~/assets/img/icon.svg`),
+          data: {
+            type: 'control',
+            value: '5',
+          },
         },
       ]"
     />
@@ -102,15 +229,25 @@ import Avatar from "@/components/ui/Avatar";
 import Icons from "@/components/ui/Icons";
 import Media from "@/components/ui/Media";
 import Lists from "@/components/ui/Lists";
-// import BaseLink from "@/components/ui/BaseLink";
-// import SvgClose from "~/assets/img/cloud-arrow.svg?inline";
-
+import Input from "@/components/ui/Input";
+import Paginations from "@/components/ui/Paginations";
+import Tabs from "@/components/ui/tabs/Tabs";
+import Tab from "@/components/ui/tabs/Tab";
+import SnackBar from "@/components/ui/SnackBar";
+import Dropdown from "@/components/ui/Dropdown";
+import FilterDropdown from "@/components/ui/FilterDropdown";
+import FileUpload from "@/components/ui/FileUpload";
+import Alerts from "@/components/ui/Alerts";
+import { required, minLength, email } from "vuelidate/lib/validators";
 export default {
   name: "Testing",
   components: {
-    // SvgClose,
-    // MyButton,
-    // BaseLink,
+    Alerts,
+    FileUpload,
+    FilterDropdown,
+    Dropdown,
+    Tabs,
+    Tab,
     Button,
     Checkbox,
     Radio,
@@ -121,12 +258,36 @@ export default {
     Icons,
     Media,
     Lists,
+    Input,
+    Paginations,
+    SnackBar,
   },
   data() {
     return {
-      name: "",
+      userName: "",
+      fruit: "",
       age: 0,
+      error: "",
+      pages: { total: 5, currentPage: 3 },
+      showSnackbar: false,
+      position: "top-right",
+      showModal: false,
     };
+  },
+  validations: {
+    userName: {
+      required,
+      email,
+      minLength: minLength(4),
+    },
+  },
+  methods: {
+    paginate(value) {
+      this.pages.currentPage = value;
+    },
+    close() {
+      this.showSnackbar = false;
+    },
   },
 };
 </script>

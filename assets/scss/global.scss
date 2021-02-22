@@ -2,22 +2,50 @@ html{
   overflow: auto !important;
 }
 body{
-  font-family: 'Montserrat', sans-serif;
   //background: #F5F5F5;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-a,p{
-  font-family: 'Montserrat', sans-serif;
-  text-decoration: none;
-}
-h1,h2,h3,h4,h5,h6,div,span{
-  font-family: 'Montserrat', sans-serif !important;
-}
+
+//Headings
 h1{
-  font-size: 90px !important;
+  font-size: 46px;
+  line-height: 60px;
+  margin-bottom: 48px;
+  @include typography-heading;
 }
+h2{
+  font-size: 40px;
+  line-height: 52px;
+  margin-bottom: 32px;
+  @include typography-heading;
+}
+h3{
+  font-size: 40px;
+  line-height: 52px;
+  margin-bottom: 32px;
+  @include typography-heading;
+}
+h4{
+  font-size: 32px;
+  line-height: 42px;
+  margin-bottom: 25px;
+  @include typography-heading;
+}
+h5{
+  font-size: 28px;
+  line-height: 36px;
+  margin-bottom: 24px;
+  @include typography-heading;
+}
+h6{
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 16px;
+  @include typography-heading;
+}
+
 ul{
   list-style-type: none;
   padding-left: 0;

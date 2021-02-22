@@ -55,26 +55,17 @@
 
   &__small{
     padding: 10px 24px;
-    font-weight: bold;
-    font-size: 13px;
-    line-height: 20px;
-    letter-spacing: -0.02em;
+    @include btn-s-mont;
   }
 
   &__medium{
     padding: 12px 24px;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 24px;
-    letter-spacing: -0.02em;
+    @include btn-m-mont;
   }
 
   &__large{
     padding: 15px 24px;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 26px;
-    letter-spacing: -0.02em;
+    @include btn-l-mont;
   }
 
   &__black{

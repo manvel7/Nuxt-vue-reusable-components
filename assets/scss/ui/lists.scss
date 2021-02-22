@@ -3,15 +3,16 @@
   ul{
     padding: 65px 80px;
     list-style-type: none;
-
   }
 
   &__item{
     display: flex;
     justify-content: space-between;
     background: $c-white;
-    border: 1px solid red;
+    //border: 1px solid red;
     padding: 13px 16px;
+    position: relative;
+    margin-bottom: 15px;
 
     .left-side{
       display: flex;
@@ -22,18 +23,36 @@
           margin-top: 0;
         }
         .title{
-          font-family: $font-inter;
-          font-weight: bold;
-          font-size: 15px;
-          line-height: 24px;
-          color: $c-black;
+         @include text-m-bold;
         }
         .sub-title{
-          font-family: $font-inter;
-          font-size: 14px;
-          line-height: 22px;
-          color: $c-gray-800;
+          color: $c-gray-800 !important;
+          @include text-s;
         }
+      }
+    }
+
+    .right-side{
+
+      .timestamp{
+        position: absolute;
+        top: 13px;
+        right: 16px;
+        color: $c-gray-800 !important;
+        @include text-s;
+      }
+
+      .metadata{
+        position: absolute;
+        top: 23px;
+        right: 16px;
+        @include text-m;
+      }
+
+      .control{
+        position: absolute;
+        top: 23px;
+        right: 16px;
       }
     }
   }

@@ -1,12 +1,9 @@
 .custom-switch{
   &__item{
     .text{
-      font-family: "Inter", sans-serif;
       vertical-align: text-bottom !important;
       margin-left: 8px;
-      font-size: 15px;
-      line-height: 24px;
-      color: $c-black;
+      @include text-m;
     }
     @include switch;
   }

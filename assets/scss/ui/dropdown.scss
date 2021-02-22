@@ -1,0 +1,107 @@
+.custom-dropdown{
+  width: 285px;
+
+  .aselect {
+    width: 285px;
+    margin-top: 20px;
+    cursor: pointer;
+
+    .selector {
+      background: $c-white;
+      position: relative;
+      border: 1px solid $c-gray-600;
+      box-sizing: border-box;
+      border-radius: 3px;
+      z-index: 1;
+
+      .arrow {
+        position: absolute;
+        right: 10px;
+        top: 40%;
+        transform: rotateZ(0deg) translateY(0);
+        transition-duration: 0.3s;
+        transition-timing-function: cubic-bezier(.59,1.39,.37,1.01);
+      }
+      .expanded {
+        transform: rotateZ(180deg) translateY(2px);
+      }
+      .label {
+        display: block;
+        padding: 12px;
+        font-size: 16px;
+        color: #888;
+        height: 48px;
+
+        .label-float{
+          font-family: $font-inter;
+          line-height: 5px;
+          font-size: 15px;
+          color: #8C8C8C;
+        }
+        .change-position{
+          position: absolute;
+          transform: translateY(-10px);
+          transition-duration: 0.3ms;
+          transition-timing-function: cubic-bezier(.59,1.39,.37,1.01);
+          color: #8C8C8C !important;
+          @include text-s;
+          @apply scale-75;
+        }
+        .value{
+          position: absolute;
+          top: 22px;
+          @include text-m;
+        }
+      }
+    }
+
+    .help-text{
+      margin-top: 5px;
+      @include text-s;
+    }
+
+    ul {
+      background: $c-white;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      border: 1px solid $c-gray-600;
+      width: 100%;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      position: absolute;
+      z-index: 1;
+
+      li {
+        padding: 12px;
+        color: #666;
+        cursor: pointer;
+        transition: all 0.3ms ease-in-out;
+        @include text-s;
+
+        &:hover {
+          background: $c-gray-300;
+        }
+      }
+    }
+
+    .current {
+      background: #eaeaea;
+
+      &:hover{
+        background: #eaeaea;
+      }
+    }
+
+    .hidden {
+      visibility: hidden;
+    }
+
+    .visible {
+      visibility: visible;
+    }
+  }
+
+}
+
+

@@ -15,7 +15,17 @@
             <p class="sub-title">{{ item.subTitle }}</p>
           </div>
         </div>
-        <div class="right-side">Tes</div>
+        <div v-if="item.data" class="right-side">
+          <span v-if="item.data.type === 'timestamp'" class="timestamp">{{
+            item.data.value
+          }}</span>
+          <span v-else-if="item.data.type === 'control'" class="control"
+            ><SvgIconBan></SvgIconBan
+          ></span>
+          <span v-else-if="item.data.type === 'metadata'" class="metadata">{{
+            item.data.value
+          }}</span>
+        </div>
       </li>
     </ul>
   </div>
@@ -23,10 +33,12 @@
 
 <script>
 import Avatar from "@/components/ui/Avatar";
+import SvgIconBan from "~/assets/icons/SvgIconBan";
 export default {
   name: "Lists",
   components: {
     Avatar,
+    SvgIconBan,
   },
   props: {
     items: {
