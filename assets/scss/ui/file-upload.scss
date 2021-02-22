@@ -1,0 +1,128 @@
+.custom-file-upload {
+  width: 285px;
+  height: 48px;
+
+  .bg-grey {
+    background: #FBFBFB;
+  }
+
+  .dropzone_image_upload {
+    border: 1px dashed $c-gray-700;
+    height: 48px;
+
+    .file_remove_part {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin-left: 14px;
+    }
+
+    .upload_img {
+      border: 1px dashed $c-gray-700;
+      height: 48px;
+
+      .drop_subtitle {
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 14px;
+        align-items: center;
+        width: 165px;
+      }
+
+      .drop_div {
+        color: white;
+        text-align: center;
+        height: 100%;
+
+        .brows_btn {
+          display: flex;
+          justify-content: center;
+
+          .label-block {
+            width: 100%;
+            display: flex;
+            line-height: 48px;
+            height: 48px;
+            justify-content: center;
+            cursor: pointer;
+
+            .svg{
+              height: 100%;
+              line-height: 48px !important;
+              display: inline-block;
+              padding-top: 15px;
+              margin-right: 9px;
+            }
+
+            .text-upload{
+              cursor: pointer;
+              line-height: 48px !important;
+              @include text-m;
+            }
+          }
+        }
+
+        .input_file {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .file-name {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.002em;
+    color: black;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+    .btn-upload{
+      outline: none;
+
+      &:focus{
+        outline: none;
+      }
+    }
+
+    span{
+      @include text-m;
+    }
+  }
+
+  .progressbar-wrapper{
+    width: 250px;
+    margin: 0 auto;
+    position: relative;
+    justify-content: center;
+    line-height: 48px;
+    padding-top: 20px;
+    height: 100%;
+
+    .progressbar{
+      display: flex;
+
+      .progressbar-content{
+        width: 210px;
+        height: 4px;
+        background: $c-gray-400;
+        //border-radius: 4px;
+
+        .part{
+          height: 4px;
+          background: $c-primary;
+          //border-radius: 4px;
+        }
+      }
+
+      span{
+        margin-top: -7px;
+        margin-left: 8px;
+        @include text-x;
+      }
+    }
+
+  }
+
+}

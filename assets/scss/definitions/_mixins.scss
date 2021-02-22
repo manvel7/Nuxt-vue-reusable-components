@@ -5,3 +5,229 @@
     padding: 56px 10px 100px 10px;
   }
 }
+
+@mixin ul{
+  padding-left: 0;
+  list-style-type: none;
+}
+
+@mixin typography-heading{
+  font-family: $font-montserrat;
+  font-weight: bold;
+  letter-spacing: -0.02em;
+  color: $c-black;
+}
+
+@mixin button-text{
+  font-family: $font-montserrat;
+  font-weight: bold;
+  letter-spacing: -0.02em;
+  color: $c-black;
+}
+
+@mixin link-mont{
+  font-family: $font-montserrat;
+  font-weight: 400;
+  text-decoration-line: underline;
+  color: $c-black;
+}
+
+@mixin link-int{
+  font-family: $font-inter;
+  font-weight: 400;
+  text-decoration-line: underline;
+  color: $c-black;
+}
+
+@mixin text{
+  font-family: $font-inter;
+  color: $c-black;
+}
+
+//Buttons Montserrat
+@mixin btn-s-mont{
+  font-size: 13px;
+  line-height: 20px;
+  @include button-text;
+}
+@mixin btn-m-mont{
+  font-size: 14px;
+  line-height: 24px;
+  @include button-text;
+}
+@mixin btn-l-mont{
+  font-size: 16px;
+  line-height: 26px;
+  @include button-text;
+}
+
+//Links Montserrat
+@mixin link-s-mont{
+  font-size: 14px;
+  line-height: 22px;
+  @include link-mont;
+}
+@mixin link-m-mont{
+  font-size: 15px;
+  line-height: 24px;
+  @include link-mont;
+}
+@mixin link-l-mont{
+  font-size: 18px;
+  line-height: 26px;
+  @include link-mont;
+}
+
+//Links Inter
+@mixin link-s-int{
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  @include link-int;
+}
+@mixin link-m-int{
+  font-size: 15px;
+  line-height: 24px;
+  @include link-int;
+}
+@mixin link-l-int{
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 26px;
+  @include link-int;
+}
+
+//Text Large Inter
+@mixin text-l{
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 26px;
+  @include text;
+}
+@mixin text-l-med{
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 27px;
+  @include text;
+}
+@mixin text-l-bold{
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 27px;
+  @include text;
+}
+
+//Text Medium Inter
+@mixin text-m{
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 24px;
+  @include text;
+}
+@mixin text-m-med{
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+  @include text;
+}
+@mixin text-m-bold{
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 24px;
+  @include text;
+}
+
+//Text Small Inter
+@mixin text-s{
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  @include text;
+}
+@mixin text-s-med{
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  @include text;
+}
+@mixin text-s-bold{
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 21px;
+  @include text;
+}
+
+//Text Extra Inter
+@mixin text-x{
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  @include text;
+}
+@mixin text-x-med{
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  @include text;
+}
+
+
+@mixin switch{
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 36px;
+      height: 22px;
+      vertical-align: sub;
+    }
+
+    .slider::before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 0.5px;
+      bottom: 1px;
+      background-color: white;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    }
+    .slider.round {
+      border-radius: 34px;
+      border: 1px solid #F2F4F6;
+    }
+
+    .slider.round::before {
+      border-radius: 50%;
+    }
+
+    input {
+      display: none;
+    }
+    input:checked + .slider {
+      background-color: $c-primary;
+    }
+
+    input:focus + .slider {
+      box-shadow: 0 0 1px #101010;
+    }
+
+    input:checked + .slider::before {
+      -webkit-transform: translateX(14px);
+      -ms-transform: translateX(14px);
+      transform: translateX(14px);
+      background-color: $c-white;
+    }
+
+}

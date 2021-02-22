@@ -1,0 +1,59 @@
+.custom-lists{
+
+  ul{
+    padding: 65px 80px;
+    list-style-type: none;
+  }
+
+  &__item{
+    display: flex;
+    justify-content: space-between;
+    background: $c-white;
+    //border: 1px solid red;
+    padding: 13px 16px;
+    position: relative;
+    margin-bottom: 15px;
+
+    .left-side{
+      display: flex;
+
+      .header{
+        p{
+          margin-bottom: 0;
+          margin-top: 0;
+        }
+        .title{
+         @include text-m-bold;
+        }
+        .sub-title{
+          color: $c-gray-800 !important;
+          @include text-s;
+        }
+      }
+    }
+
+    .right-side{
+
+      .timestamp{
+        position: absolute;
+        top: 13px;
+        right: 16px;
+        color: $c-gray-800 !important;
+        @include text-s;
+      }
+
+      .metadata{
+        position: absolute;
+        top: 23px;
+        right: 16px;
+        @include text-m;
+      }
+
+      .control{
+        position: absolute;
+        top: 23px;
+        right: 16px;
+      }
+    }
+  }
+}

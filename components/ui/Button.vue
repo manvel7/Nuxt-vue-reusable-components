@@ -4,9 +4,12 @@
     :class="classes"
     :style="style"
     :disabled="disabled"
-    class="storybook-button"
+    class="custom-button"
     @click="onClick"
   >
+    <span v-if="src" class="svg">
+      <img :src="src" alt="icon" />
+    </span>
     {{ label }}
   </button>
 </template>
@@ -20,15 +23,20 @@ export default {
       type: String,
       required: true,
     },
-    primary: {
-      type: Boolean,
-      default: false,
+    src: {
+      type: String,
+      required: false,
+      default: null,
+    },
+    background: {
+      type: String,
+      default: "normal",
+    },
+    color: {
+      type: String,
+      default: "black",
     },
     disabled: {
-      type: Boolean,
-      default: false,
-    },
-    loading: {
       type: Boolean,
       default: false,
     },
@@ -41,23 +49,21 @@ export default {
     },
     borderRadius: {
       type: Number,
-      default: 5,
+      default: 0,
     },
   },
 
   computed: {
     classes() {
       return {
-        "storybook-button--primary": this.primary,
-        "storybook-button--secondary": !this.primary,
-        "storybook-button--disabled": this.disabled,
-        "storybook-button--loading": this.loading,
-        [`storybook-button--${this.size}`]: true,
+        [`custom-button__${this.background}`]: true,
+        [`custom-button__${this.color}`]: true,
+        [`custom-button__${this.size}`]: true,
+        "custom-button__disabled": this.disabled,
       };
     },
     style() {
       return {
-        backgroundColor: this.backgroundColor,
         borderRadius: this.borderRadius + "px",
       };
     },
@@ -72,5 +78,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../assets/scss/components/button";
+@import "../../assets/scss/ui/button";
 </style>

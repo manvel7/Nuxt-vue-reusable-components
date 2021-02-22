@@ -1,99 +1,295 @@
 <template>
   <div class="test">
-    <h1>Hello {{ $t("email") }} <svg-close /></h1>
-    <base-link />
+    <div class="grid gap-4 sm:grid-cols-6 md:grid-cols-3 lg:grid-cols-4">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+    </div>
+    <Button
+      :label="'Secondary'"
+      :background="'secondary'"
+      :size="'large'"
+      :color="'black'"
+      :disabled="false"
+    />
+    <Button
+      :label="'normal'"
+      :background="'normal'"
+      :size="'medium'"
+      :color="'black'"
+      :disabled="false"
+    />
+    <Button
+      :label="'Disable'"
+      :background="'disable'"
+      :size="'small'"
+      :color="'black'"
+      :disabled="true"
+    />
+    <Checkbox :label="'Checked'" :disabled="false" />
+    <Checkbox :label="'Checked'" :disabled="true" />
     <div>
-      <div class="form-group" :class="{ 'form-group--error': $v.name.$error }">
-        <label class="form__label">Email</label>
-        <input
-          v-model.trim="name"
-          class="form__input"
-          @input="setName($event.target.value)"
-        />
-      </div>
-      <div v-if="!$v.name.required" class="error">Field is required</div>
-      <div v-if="!$v.name.minLength" class="error">
-        Name must have at least {{ $v.name.$params.minLength.min }} letters.
-      </div>
-      <button class="uk-button uk-button-danger" @click.prevent="testToast">
-        Primary
-      </button>
-      <my-button
-        label="Primary Button"
-        primary
-        :loading="false"
-        size="large"
-        background-color="rgba(89,74,165,1)"
-        :border-radius="15"
-      />
-      <my-button
-        label="Primary Button"
-        primary
-        disabled
-        size="medium"
-        background-color="rgba(83,58,209,1)"
-        :border-radius="5"
+      <Radio
+        :items="[
+          { value: 'one', label: 'One' },
+          { value: 'two', label: 'Two' },
+        ]"
       />
     </div>
+    <div>
+      <SwitchComponent :size="'medium'" :label="'Test'" />
+      <SwitchComponent :size="'large'" :label="'Test1'" />
+    </div>
+    <div>
+      <Tags :color="'primary'" />
+      <Tags :color="'secondary'" />
+    </div>
+    <div>
+      <Divider :width="'150px'" />
+      <br />
+      <Divider :width="'500px'" />
+      <br />
+      <Divider :width="'100%'" />
+    </div>
+    <div>
+      <Avatar
+        :src="require(`~/assets/img/icon.svg`)"
+        :image-type="'image'"
+        :size="'medium'"
+      />
+
+      <br />
+      <Avatar
+        :src="require(`~/assets/img/icon-avatar.svg`)"
+        :image-type="'icon'"
+        :size="'large'"
+      />
+    </div>
+    <div>
+      <Icons :size="'large'" :src="require(`~/assets/img/right-arrow.svg`)" />
+      <Icons :size="'medium'" :src="require(`~/assets/img/right-arrow.svg`)" />
+      <Icons :size="'small'" :src="require(`~/assets/img/right-arrow.svg`)" />
+    </div>
+    <div>
+      <Media :src="require(`~/assets/img/media.svg`)" :size="'default'" />
+      <Media :src="require(`~/assets/img/media.svg`)" :size="'default-small'" />
+      <Media :src="require(`~/assets/img/media.svg`)" :size="'square'" />
+      <Media
+        :src="require(`~/assets/img/media.svg`)"
+        :size="'portrait-small'"
+      />
+    </div>
+    <br />
+    <br />
+    <br />
+    <div>
+      <Paginations :pages="{ total: 1, currentPage: 1 }" />
+      <Paginations :pages="pages" @paginate="paginate" />
+    </div>
+    <br />
+    <div>
+      <Tabs>
+        <Tab name="Posts (21)" :selected="true">
+          <h1>What we do</h1>
+        </Tab>
+        <Tab name="Photos (139)">
+          <h1>How much we do it for</h1>
+        </Tab>
+        <Tab name="Videos (54)">
+          <h1>Why we do it</h1>
+        </Tab>
+      </Tabs>
+    </div>
+    <div>
+      <Input
+        :type="'email'"
+        :label="'Enter Email'"
+        :disabled="false"
+        :help-text="'Help Text'"
+        :name.sync="userName"
+        :error="$v.userName"
+        :rules="[
+          { name: 'required' },
+          { name: 'minLength', value: 4 },
+          { name: 'email' },
+        ]"
+      />
+    </div>
+    <br />
+    <br />
+    <div>
+      <Dropdown
+        :list="[
+          { id: 1, label: 'Orange', value: 'orange' },
+          { id: 2, label: 'Apple', value: 'apple' },
+          { id: 3, label: 'Lemon', value: 'Lemon' },
+        ]"
+        :return-object="false"
+        :item-value="'id'"
+        :item-label="'label'"
+        :help-text="'Help Text'"
+        :name.sync="fruit"
+      />
+    </div>
+    <br />
+    <div>
+      <FilterDropdown
+        :list="[
+          { id: 1, label: 'Orange', value: 'orange' },
+          { id: 2, label: 'Apple', value: 'apple' },
+          { id: 3, label: 'Lemon', value: 'Lemon' },
+        ]"
+        :return-object="false"
+        :item-value="'id'"
+        :item-label="'label'"
+        :name.sync="fruit"
+      />
+    </div>
+    <br />
+    <br />
+    <div>
+      <FileUpload />
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <div>
+      <button @click="showSnackbar = !showSnackbar">show</button>
+      <SnackBar
+        :type="'snackbar'"
+        :active.sync="showSnackbar"
+        :position="position"
+        :timeout="10000"
+        :message="'Can’t send a message. Retry in 5 seconds.'"
+        :background-color="'default'"
+        :is-close="true"
+        @close="close"
+      />
+    </div>
+    <br />
+    <div>
+      <button id="show-modal" class="demo-button" @click="showModal = true">
+        Show Modal
+      </button>
+      <Alerts v-if="showModal" :show-close="true" @close="showModal = false" />
+    </div>
+    <br />
+    <br />
+    <Lists
+      :width="'480px'"
+      :items="[
+        {
+          title: 'Two-line + Control',
+          subTitle: 'Some secondary text here',
+          iconSrc: require(`~/assets/img/icon.svg`),
+          data: {
+            type: 'timestamp',
+            value: 'timestamp',
+          },
+        },
+        {
+          title: 'Two-line + Control',
+          subTitle: 'Some secondary text here',
+          iconSrc: require(`~/assets/img/icon.svg`),
+          data: {
+            type: 'metadata',
+            value: '5',
+          },
+        },
+        {
+          title: 'Two-line + Control',
+          subTitle: 'Some secondary text here',
+          iconSrc: require(`~/assets/img/icon.svg`),
+          data: {
+            type: 'control',
+            value: '5',
+          },
+        },
+      ]"
+    />
   </div>
 </template>
 
 <script>
-import { required, minLength, between } from "vuelidate/lib/validators";
-import { functions } from "@/utils";
-import MyButton from "@/components/ui/Button";
-import BaseLink from "@/components/ui/BaseLink";
-import SvgClose from "~/assets/img/cloud-arrow.svg?inline";
+// import { functions } from "@/utils";
+import Button from "@/components/ui/Button";
+import Checkbox from "@/components/ui/Checkbox";
+import Radio from "@/components/ui/Radio";
+import SwitchComponent from "@/components/ui/SwitchType";
+import Tags from "@/components/ui/Tags";
+import Divider from "@/components/ui/Divider";
+import Avatar from "@/components/ui/Avatar";
+import Icons from "@/components/ui/Icons";
+import Media from "@/components/ui/Media";
+import Lists from "@/components/ui/Lists";
+import Input from "@/components/ui/Input";
+import Paginations from "@/components/ui/Paginations";
+import Tabs from "@/components/ui/tabs/Tabs";
+import Tab from "@/components/ui/tabs/Tab";
+import SnackBar from "@/components/ui/SnackBar";
+import Dropdown from "@/components/ui/Dropdown";
+import FilterDropdown from "@/components/ui/FilterDropdown";
+import FileUpload from "@/components/ui/FileUpload";
+import Alerts from "@/components/ui/Alerts";
+import { required, minLength, email } from "vuelidate/lib/validators";
 export default {
   name: "Testing",
   components: {
-    SvgClose,
-    MyButton,
-    BaseLink,
+    Alerts,
+    FileUpload,
+    FilterDropdown,
+    Dropdown,
+    Tabs,
+    Tab,
+    Button,
+    Checkbox,
+    Radio,
+    SwitchComponent,
+    Tags,
+    Divider,
+    Avatar,
+    Icons,
+    Media,
+    Lists,
+    Input,
+    Paginations,
+    SnackBar,
   },
   data() {
     return {
-      name: "",
+      userName: "",
+      fruit: "",
       age: 0,
+      error: "",
+      pages: { total: 5, currentPage: 3 },
+      showSnackbar: false,
+      position: "top-right",
+      showModal: false,
     };
   },
   validations: {
-    name: {
+    userName: {
       required,
+      email,
       minLength: minLength(4),
-    },
-    age: {
-      between: between(20, 30),
     },
   },
   methods: {
-    setName(value) {
-      this.name = value;
-      this.$v.name.$touch();
+    paginate(value) {
+      this.pages.currentPage = value;
     },
-    setAge(value) {
-      this.age = value;
-      this.$v.age.$touch();
-    },
-
-    testToast() {
-      this.$store.dispatch("login", { email: this.name });
-      if (this.$store.getters.isLoggedIn) {
-        this.$toast.success("Successfuly logined");
-      } else {
-        const errors = functions.validationErrors(this.$store.getters.errors);
-        this.$toast.error(errors);
-        if (this.$store.getters.errors.length === 1) {
-          functions.customStyleError();
-        }
-      }
+    close() {
+      this.showSnackbar = false;
     },
   },
 };
 </script>
 
-<style lang="scss" scoped>
-.uk-button-secondary {
-  background-color: yellow;
-}
-</style>
+<!--<style lang="scss" scoped></style>-->

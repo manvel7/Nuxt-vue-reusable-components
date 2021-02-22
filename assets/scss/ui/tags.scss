@@ -1,0 +1,28 @@
+.custom-tags{
+
+  ul{
+    display: flex;
+    @include ul;
+  }
+
+  &__item{
+    padding: 6px 16px;
+    border-radius: 16px;
+    margin-right: 32px;
+    @include text-s-med;
+
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+
+  &__primary{
+    background: #2A328C;
+    color: $c-white;
+  }
+  &__secondary{
+    border: 1px solid $c-gray-500;
+    background: $c-white;
+    color: $c-black;
+  }
+}
