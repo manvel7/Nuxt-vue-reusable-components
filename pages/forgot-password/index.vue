@@ -53,5 +53,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "assets/scss/components/forgot-password";
+@import "assets/scss/pages/forgot-password";
 </style>

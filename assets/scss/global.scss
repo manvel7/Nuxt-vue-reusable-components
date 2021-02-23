@@ -54,6 +54,10 @@ h5{
   line-height: 36px;
   margin-bottom: 24px;
   @include typography-heading;
+
+  @media (max-width: $break-xs) {
+    margin-bottom: 16px;
+  }
 }
 h6{
   font-size: 24px;

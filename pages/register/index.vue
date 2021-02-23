@@ -211,5 +211,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "assets/scss/components/register";
+@import "assets/scss/pages/register";
 </style>

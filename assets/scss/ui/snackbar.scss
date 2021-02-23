@@ -1,7 +1,7 @@
 .close-btn {
   padding: 8px 12px;
   margin: -8px -6px -8px 20px;
-  color: $c-normal;
+  color: $c-white;
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
   font-size: 14px;
@@ -89,12 +89,16 @@
 
   &__wrap {
     width: auto;
-    min-width: 300px;
+    min-width: 320px;
     max-width: 550px;
     margin: 0 auto;
     padding: 15px;
     border-radius: 2px;
     box-sizing: border-box;
+
+    @media (max-width: $break-xxxs) {
+      min-width: 290px;
+    }
   }
   &__body {
     display: flex;

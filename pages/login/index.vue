@@ -88,6 +88,18 @@
           >Forgot password?</nuxt-link
         >
       </div>
+
+      <SnackBar
+        class="custom-snackbar"
+        :type="'snackbar'"
+        :active.sync="showSnackbar"
+        :position="'bottom-center'"
+        :timeout="5000"
+        :message="'Password changed.'"
+        :is-close="true"
+        :background-color="'success'"
+        @close="close"
+      />
     </div>
   </div>
 </template>
@@ -95,12 +107,19 @@
 <script>
 import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
+import SnackBar from "@/components/ui/SnackBar";
 import { email, required } from "vuelidate/lib/validators";
 export default {
   name: "Index",
   components: {
     Button,
     Input,
+    SnackBar,
+  },
+  beforeRouteEnter(to, from, next) {
+    next((vm) => {
+      vm.prevUrl = from.path;
+    });
   },
   validations: {
     email: {
@@ -113,6 +132,8 @@ export default {
   },
   data() {
     return {
+      prevUrl: "",
+      showSnackbar: false,
       passwordType: "password",
       email: "",
       password: "",
@@ -125,16 +146,24 @@ export default {
       },
     };
   },
+  mounted() {
+    if (this.prevUrl === "/recovery-password") {
+      this.showSnackbar = true;
+    }
+  },
   methods: {
     iconClick() {
       if (this.passwordType === "password") {
         this.passwordType = "text";
       } else this.passwordType = "password";
     },
+    close() {
+      this.showSnackbar = false;
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-@import "assets/scss/components/login";
+@import "assets/scss/pages/login";
 </style>

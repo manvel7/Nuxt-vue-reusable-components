@@ -90,5 +90,16 @@
         @include auth_links;
       }
     }
+
+    .custom-snackbar{
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+      @include auth_wrapper;
+
+      @media (max-width: 360px) {
+        margin-left: 16px;
+        margin-right: 16px;
+      }
+    }
   }
 }
