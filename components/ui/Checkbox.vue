@@ -1,12 +1,18 @@
 <template>
-  <div class="custom-checkbox">
-    <input
-      id="checkbox"
-      type="checkbox"
-      :class="classes"
-      :disabled="disabled"
-    />
-    <label for="checkbox">{{ label }}</label>
+  <div class="checkbox-class">
+    <div class="custom-checkbox">
+      <input
+        id="checkbox"
+        v-model="propModel"
+        type="checkbox"
+        :class="classes"
+        :disabled="disabled"
+      />
+      <slot name="label"></slot>
+    </div>
+    <div v-if="error" class="errors-list">
+      <p>{{ error }}</p>
+    </div>
   </div>
 </template>
 
@@ -14,16 +20,29 @@
 export default {
   name: "Checkbox",
   props: {
-    label: {
-      type: String,
-      required: true,
-    },
     disabled: {
       type: Boolean,
       required: false,
     },
+    name: {
+      type: [String, Boolean],
+      required: true,
+    },
+    error: {
+      type: String,
+      required: false,
+      default: null,
+    },
   },
   computed: {
+    propModel: {
+      get() {
+        return this.name;
+      },
+      set(value) {
+        this.$emit("update:name", value);
+      },
+    },
     classes() {
       return {
         "custom-checkbox__disabled": this.disabled,

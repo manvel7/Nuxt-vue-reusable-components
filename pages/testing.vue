@@ -32,8 +32,8 @@
       :color="'black'"
       :disabled="true"
     />
-    <Checkbox :label="'Checked'" :disabled="false" />
-    <Checkbox :label="'Checked'" :disabled="true" />
+    <Checkbox :label="'Checked'" :disabled="false" :name="'rere'" />
+    <Checkbox :label="'Checked'" :disabled="true" :name="'rere'" />
     <div>
       <Radio
         :items="[

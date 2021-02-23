@@ -1,16 +1,19 @@
 .custom-input{
-  width: 285px;
-  height: 48px;
-  border: 1px solid $c-gray-600;
-  box-sizing: border-box;
-  border-radius: 3px;
+  //width: 285px;
 
-  form{
-    width: 285px;
-    height: 48px;
+  .w-full{
+    //width: 285px;
+    //height: 48px;
+
+    .floating-input{
+      border: 1px solid $c-gray-600;
+      box-sizing: border-box;
+      border-radius: 3px;
+      height: 48px;
+    }
 
     input{
-      width: 285px;
+      //width: 285px;
       height: 48px;
       background: transparent;
       padding: 12px;
@@ -35,6 +38,7 @@
       position: absolute;
       right: 8px;
       top: 15px;
+      //cursor: pointer;
     }
 
     label{
@@ -56,7 +60,7 @@
     .floating-input>input:focus~label,
     .floating-input>input:not(:placeholder-shown)~label {
       opacity: 1 !important;
-      color: $c-black;
+      //color: $c-black;
       @apply scale-75 -translate-y-3 translate-x-1;
     }
   }
@@ -64,7 +68,7 @@
 }
 
 .has-error{
-  border: 1px solid $c-error;
+  border: 1px solid $c-error !important;
 }
 .disabled{
   cursor: not-allowed;

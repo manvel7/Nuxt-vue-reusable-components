@@ -7,16 +7,23 @@
       class="errors-list"
     >
       <p v-if="rule.name === 'required'">
-        Please enter, this filed is required
+        {{ rule.text ? rule.text : "Please enter, this filed is required" }}
       </p>
       <p v-if="rule.name === 'minLength'">
-        Min length must be {{ rule.value }}
+        {{ rule.text ? rule.text : `Min length must be ${rule.value}` }}
       </p>
       <p v-if="rule.name === 'maxLength'">
-        Max length must be {{ rule.value }}
+        {{ rule.text ? rule.text : `Max length must be ${rule.value}` }}
       </p>
-      <p v-if="rule.name === 'email'">Not valid email format</p>
-      <p v-if="rule.name === 'numeric'">Field must be number</p>
+      <p v-if="rule.name === 'email'">
+        {{ rule.text ? rule.text : "Enter a valid email." }}
+      </p>
+      <p v-if="rule.name === 'numeric'">
+        {{ rule.text ? rule.text : "Field must be number" }}
+      </p>
+      <p v-if="rule.name === 'strongPassword'">
+        {{ rule.text ? rule.text : "Field must be number" }}
+      </p>
     </div>
   </div>
 </template>

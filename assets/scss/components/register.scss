@@ -1,0 +1,140 @@
+.main_container {
+  @include main_container;
+
+  .register-wrapper {
+    max-width: 360px;
+    margin: 0 auto;
+    padding-top: 72px;
+    padding-bottom: 32px;
+
+    @media (max-width: $break-sms) {
+      padding-top: 32px;
+    }
+
+    .social-register {
+
+      button {
+        width: 100%;
+        padding: 11px;
+        border: 1px solid $c-gray-600;
+        position: relative;
+        margin-bottom: 16px;
+        transition: all 0.3s ease-in-out;
+
+        .svg {
+          display: inline-block;
+          position: absolute;
+          left: 12px;
+        }
+      }
+
+      .google-btn{
+        transition: all 0.3s ease-in-out;
+        @include btn-m-mont;
+
+        &:hover{
+          background: #F9F9F9;
+        }
+        &:focus{
+          background: rgba(0, 0, 0, 0.1);
+        }
+
+      }
+
+      .twitter-btn {
+        background: $c-twitter;
+        transition: all 0.3s ease-in-out;
+
+        &:hover{
+          background: linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), $c-twitter;
+        }
+        &:focus{
+          background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), $c-twitter;
+        }
+
+        .svg {
+          top: 15px;
+        }
+        .text {
+          color: $c-white !important;
+          @include btn-m-mont;
+        }
+      }
+
+      .facebook-btn {
+        background: $c-fb;
+        transition: all 0.3s ease-in-out;
+
+        &:hover{
+          background: linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), $c-fb;
+        }
+        &:focus{
+          background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), $c-fb;
+        }
+
+        .text {
+          color: $c-white !important;
+          @include btn-m-mont;
+        }
+      }
+    }
+
+    .or-block {
+      position: relative;
+      border-bottom: 2px solid $c-gray-600;
+      margin-top: 19px;
+      margin-bottom: 35px;
+
+      p {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+
+        span {
+          position: absolute;
+          width: 50px;
+          height: 30px;
+          top: -13px;
+          background: white;
+          @include text-m;
+        }
+      }
+    }
+
+    .email-btn {
+      width: 100%;
+      padding: 11px;
+      border: 1px solid $c-gray-600;
+      position: relative;
+      margin-bottom: 40px;
+
+      .btn-text {
+        @include btn-m-mont;
+      }
+
+    }
+
+    .have-login {
+      display: flex;
+      justify-content: center;
+      color: $c-primary !important;
+      text-decoration: none;
+      @include btn-m-mont;
+    }
+
+    .form-wrapper {
+      .custom-input {
+        width: 100%;
+        margin-bottom: 12px;
+      }
+
+      .custom-button {
+        margin-top: 32px;
+      }
+
+      .checkbox-class {
+        margin-top: 20px;
+      }
+    }
+  }
+}

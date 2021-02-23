@@ -2,10 +2,26 @@ html{
   overflow: auto !important;
 }
 body{
-  //background: #F5F5F5;
+  //background: #E5E5E5;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+*, ::before, ::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: transparent;
+}
+button{
+  outline: none;
+  &:focus{
+    outline: none;
+  }
+}
+
+a{
+  text-decoration: underline;
 }
 
 //Headings

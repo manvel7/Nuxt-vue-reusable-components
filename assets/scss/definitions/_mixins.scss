@@ -1,8 +1,14 @@
 @mixin main_container {
-  padding: 56px 32px 100px 32px;
+  max-width: 1152px;
+  margin: 0 auto;
 
-  @media (max-width: $break-xs) {
-    padding: 56px 10px 100px 10px;
+  @media (max-width: 1152px){
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  @media (max-width: 600px){
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
 

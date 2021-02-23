@@ -7,9 +7,7 @@
     class="custom-button"
     @click="onClick"
   >
-    <span v-if="src" class="svg">
-      <img :src="src" alt="icon" />
-    </span>
+    <slot name="icon"></slot>
     {{ label }}
   </button>
 </template>
@@ -44,7 +42,7 @@ export default {
       type: String,
       default: "medium",
       validator(value) {
-        return ["small", "medium", "large"].includes(value);
+        return ["small", "medium", "large", "custom"].includes(value);
       },
     },
     borderRadius: {

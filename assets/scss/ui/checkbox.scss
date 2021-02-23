@@ -1,4 +1,5 @@
 .custom-checkbox{
+  display: flex;
 
   input{
     width: 18px;
@@ -11,17 +12,21 @@
     outline: none;
     cursor: pointer;
     position: relative;
+    display: inline-table;
 
     &:checked {
       background: transparent;
       border: 2px solid #000;
 
       &::after {
-        content: '✔';
+        content: '';
+        background: url("~assets/img/Vector.png");
         color: black;
         position: absolute;
-        top: -4px;
+        top: 2px;
         left: 1px;
+        width: 11px;
+        height: 9px;
       }
     }
   }
@@ -32,10 +37,21 @@
     @include text-m;
   }
 
-
-
   &__disabled{
     background: $c-gray-500;
     border: 2px solid $c-gray-500 !important;
+  }
+  a{
+    text-decoration: underline;
+  }
+}
+
+.errors-list {
+  margin-top: 5px;
+
+  p {
+    color: $c-error !important;
+    line-height: 14px !important;
+    @include text-x;
   }
 }
