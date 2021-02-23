@@ -258,3 +258,23 @@
     }
   }
 }
+
+@mixin auth_wrapper{
+  max-width: 360px;
+  margin: 0 auto;
+  padding-top: 72px;
+  padding-bottom: 32px;
+
+  @media (max-width: $break-sms) {
+    padding-top: 32px;
+  }
+}
+
+@mixin auth_links{
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  color: $c-primary !important;
+  text-decoration: none;
+  @include btn-m-mont;
+}

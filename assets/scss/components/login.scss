@@ -2,14 +2,7 @@
   @include main_container;
 
   .login-wrapper {
-    max-width: 360px;
-    margin: 0 auto;
-    padding-top: 72px;
-    padding-bottom: 32px;
-
-    @media (max-width: $break-sms) {
-      padding-top: 32px;
-    }
+    @include auth_wrapper;
 
     .social-register {
       display: flex;
@@ -94,12 +87,7 @@
         margin-top: 32px;
       }
       .forgot-password {
-        display: flex;
-        justify-content: center;
-        margin-top: 40px;
-        color: $c-primary !important;
-        text-decoration: none;
-        @include btn-m-mont;
+        @include auth_links;
       }
     }
   }
