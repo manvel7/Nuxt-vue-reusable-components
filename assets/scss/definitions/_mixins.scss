@@ -235,5 +235,26 @@
       transform: translateX(14px);
       background-color: $c-white;
     }
+}
 
+@mixin or_block{
+  position: relative;
+  border-bottom: 2px solid $c-gray-600;
+  margin-top: 19px;
+  margin-bottom: 35px;
+
+  p {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    span {
+      position: absolute;
+      width: 50px;
+      height: 30px;
+      top: -13px;
+      background: white;
+      @include text-m;
+    }
+  }
 }

@@ -1,7 +1,7 @@
-.main_container {
+.main_container{
   @include main_container;
 
-  .register-wrapper {
+  .login-wrapper {
     max-width: 360px;
     margin: 0 auto;
     padding-top: 72px;
@@ -12,19 +12,22 @@
     }
 
     .social-register {
+      display: flex;
+      justify-content: space-between;
 
       button {
-        width: 100%;
-        padding: 11px;
-        border: 1px solid $c-gray-600;
-        position: relative;
-        margin-bottom: 16px;
+        width: 82px;
+        height: 50px;
         transition: all 0.3s ease-in-out;
 
+        @media (max-width: $break-xxsc) {
+          width: 70px;
+        }
+
         .svg {
-          display: inline-block;
-          position: absolute;
-          left: 12px;
+          margin: 0 auto;
+          justify-content: center;
+          display: flex;
         }
       }
 
@@ -52,9 +55,6 @@
           background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), $c-twitter;
         }
 
-        .svg {
-          top: 15px;
-        }
         .text {
           color: $c-white !important;
           @include btn-m-mont;
@@ -80,28 +80,8 @@
     }
 
     .or-block {
+      margin-top: 35px !important;
       @include or_block;
-    }
-
-    .email-btn {
-      width: 100%;
-      padding: 11px;
-      border: 1px solid $c-gray-600;
-      position: relative;
-      margin-bottom: 40px;
-
-      .btn-text {
-        @include btn-m-mont;
-      }
-
-    }
-
-    .have-login {
-      display: flex;
-      justify-content: center;
-      color: $c-primary !important;
-      text-decoration: none;
-      @include btn-m-mont;
     }
 
     .form-wrapper {
@@ -113,9 +93,13 @@
       .custom-button {
         margin-top: 32px;
       }
-
-      .checkbox-class {
-        margin-top: 20px;
+      .forgot-password {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+        color: $c-primary !important;
+        text-decoration: none;
+        @include btn-m-mont;
       }
     }
   }
